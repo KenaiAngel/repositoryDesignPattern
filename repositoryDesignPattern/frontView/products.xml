@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+    <producto>
+        <id>1</id>
+        <nombre>Televisor</nombre>
+        <precio>500</precio>
+    </producto>
+    <producto>
+        <id>2</id>
+        <nombre>Laptop</nombre>
+        <precio>1200</precio>
+    </producto>
+</productos>
