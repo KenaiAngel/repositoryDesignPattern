@@ -36,6 +36,10 @@ function getProductFromXml(xml) {
     for (i = 0; i < x.length; i++) {
 
         xmlProductId = x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue;
+        if(typeof(xmlProductId)==="string"){
+            xmlProductId = Number(xmlProductId);
+        }
+
         xmlProductName = x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
         xmlProductPrice = x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue;
 
@@ -44,16 +48,20 @@ function getProductFromXml(xml) {
 
     }
 
-    
-
 }
 
 function initializeRepository () {
     console.log(products);
-    
+
     const repoClient = new RepositoryClient (products);
     let response = repoClient.searchById(1);
     (response!==null)?(console.log(response)):(console.log("No encontramos nada"));
+    repoClient.orderArray();
+    let p1 = new Product (1,"Mouse","1300");
+    repoClient.orderedInsertion(p1);
+
+
+
 
 }
 
