@@ -1,6 +1,6 @@
-import InterfaceRepository from "./interfaceRepository.js";
+import InterfaceCrudProduct from "../intarfaceLayer/interfaceCrudProduct.js";
 
-class RepositoryClient extends InterfaceRepository {
+class RepositoryCrudProduct extends InterfaceCrudProduct {
     constructor(products){
         super();
         this.products = products;
@@ -48,8 +48,12 @@ class RepositoryClient extends InterfaceRepository {
     orderArray() {
         this.products.sort((p1, p2) => Number(p1.id) - Number(p2.id));
     }
+
+    get listOfProduct (){
+        return this.products;
+    }
     
 }
 
-export default RepositoryClient;
+export default RepositoryCrudProduct;
 

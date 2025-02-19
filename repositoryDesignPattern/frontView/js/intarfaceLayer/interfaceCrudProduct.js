@@ -1,5 +1,5 @@
 
-class InterfaceRepository {
+class InterfaceCrudProduct {
     
     orderedInsertion(product) {}
     update(product) {}
@@ -10,4 +10,4 @@ class InterfaceRepository {
 
 }
 
-export default InterfaceRepository;
+export default InterfaceCrudProduct;
